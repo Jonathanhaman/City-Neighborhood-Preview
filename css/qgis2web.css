@@ -201,3 +201,21 @@
         .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
             display: none;
         }
+/* Prevent right-side controls and title from being cut off */
+.leaflet-top.leaflet-right {
+    max-width: calc(100% - 20px);
+}
+
+.leaflet-right .leaflet-control {
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+/* Allow the title to wrap */
+.leaflet-control-title {
+    max-width: 300px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
