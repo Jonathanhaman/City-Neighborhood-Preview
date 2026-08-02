@@ -201,21 +201,47 @@
         .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
             display: none;
         }
-/* Prevent right-side controls and title from being cut off */
+/* Keep the upper-right controls inside the map */
 .leaflet-top.leaflet-right {
+    right: 10px;
     max-width: calc(100% - 20px);
 }
 
-.leaflet-right .leaflet-control {
-    margin-right: 10px;
+/* Fix the title box */
+.leaflet-top.leaflet-right .info {
+    width: 260px;
+    max-width: calc(100vw - 40px);
     box-sizing: border-box;
+    white-space: normal;
 }
 
-/* Allow the title to wrap */
-.leaflet-control-title {
-    max-width: 300px;
+/* Allow the title text to wrap */
+.leaflet-top.leaflet-right .info h2 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
     white-space: normal;
     overflow-wrap: break-word;
-    line-height: 1.2;
+}
+
+/* Fix the expanded legend/layer control */
+.leaflet-top.leaflet-right .leaflet-control-layers {
+    width: 260px;
+    max-width: calc(100vw - 40px);
     box-sizing: border-box;
+    overflow: visible;
+}
+
+/* Keep legend contents visible */
+.leaflet-control-layers-list,
+.leaflet-control-layers-overlays,
+.leaflet-layerstree-header {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+}
+
+.leaflet-control-layers table {
+    width: auto;
+    max-width: 100%;
 }
